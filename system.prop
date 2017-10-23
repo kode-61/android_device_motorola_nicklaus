@@ -1,6 +1,5 @@
-#
-# system.prop for mt6737m
-#
+# system.prop for Moto E4 Plus
+
 ro.hardware=mt6735
 ro.board.platform=mt6737m
 service.adb.root=1
@@ -38,6 +37,10 @@ ro.sys.usb.charging.only=yes
 ro.camera.sound.forced=0
 ro.audio.silent=0
 
+# Camera
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+
 ro.zygote.preload.enable=0
 
 persist.sys.strictmode.visual=0
@@ -47,11 +50,6 @@ ro.boot.selinux=disable
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
 ro.hardware.egl=mali
-
-# performance
-#ro.mtk_perf_simple_start_win=1
-#ro.mtk_perf_fast_start_win=1
-#ro.mtk_perf_response_time=1
 
 ro.mediatek.chip_ver=S01
 ro.mediatek.version.release=alps-mp-n1.mp1-V1_lenovo6737m.35.n1_P68
@@ -65,17 +63,16 @@ persist.mtk.wcn.dynamic.dump=0
 service.wcn.driver.ready=no
 ro.sf.hwrotation=0
 persist.sys.scrollingcache=2
-#touch.size.calibration=geometric
-#touch.size.scale=100
-#touch.pressure.calibration=amplitude
-#touch.pressure.scale=0.1
+touch.size.calibration=geometric
+touch.size.scale=100
+touch.pressure.calibration=amplitude
+touch.pressure.scale=0.1
 
 # temporary enables NAV bar (soft keys)
-qemu.hw.mainkeys=0
+qemu.hw.mainkeys=1
 
 mediatek.wlan.chip=CONSYS_MT6735
 mediatek.wlan.module.postfix=_consys_mt6735
-##
 
 ro.mtk_gps_support=1
 persist.mtk.combo.coredump=no
@@ -88,19 +85,16 @@ ro.mtk_dual_mic_support=1
 ro.mtk_perfservice_support=1
 ro.mtk_bt_support=1
 ro.mtk_bsp_package=1
-#ro.mtk_pq_support=2
-#ro.mtk_pq_color_mode=1
 wfd.dummy.enable=1
 mtk.vdec.waitkeyframeforplay=1
 ro.media.maxmem=500000000
-#ro.mtk_deinterlace_support=1
 ro.nxpnfc.feature=1
 mdc_initial_max_retry=10
 
-# Telephony
+# RIL
 rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
-ro.telephony.ril_class=MT6735
+ro.telephony.ril_class=NicklausRIL
 ro.telephony.ril.config=fakeiccid
 ro.telephony.sim.count=2
 persist.radio.default.sim=0
