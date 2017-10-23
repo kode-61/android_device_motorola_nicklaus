@@ -2,12 +2,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-LOCAL_PATH := device/motorola/woods
+LOCAL_PATH := device/motorola/nicklaus
 
-$(call inherit-product-if-exists, vendor/motorola/woods/woods-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/nicklaus/nicklaus-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/woods/overlay
-PRODUCT_PACKAGE_OVERLAYS += device/motorola/woods/overlay # enable this to be able overlay a default wallpaper
+DEVICE_PACKAGE_OVERLAYS += device/motorola/nicklaus/overlay
+PRODUCT_PACKAGE_OVERLAYS += device/motorola/nicklaus/overlay # enable this to be able overlay a default wallpaper
 
 # Dalvik/HWUI
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
@@ -52,13 +52,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml
 
 
-# Media	
+# Media 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml
 
-# Media	
+# Media 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/system/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:/system/etc/default_volume_tables.xml \
@@ -134,13 +134,13 @@ PRODUCT_PACKAGES += \
     power.mt6737m
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.mount.fs=EXT4 \
-	ro.adb.secure=0 \
-	ro.secure=0 \
-	ro.allow.mock.location=0 \
-	ro.debuggable=1 \
-	persist.service.acm.enable=0 \
-	ro.config.low_ram=false
+  ro.mount.fs=EXT4 \
+  ro.adb.secure=0 \
+  ro.secure=0 \
+  ro.allow.mock.location=0 \
+  ro.debuggable=1 \
+  persist.service.acm.enable=0 \
+  ro.config.low_ram=false
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -159,7 +159,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 ADDITIONAL_DEFAULT_PROPERTIES += persist.service.adb.enable=1
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+  persist.sys.usb.config=mtp
 
 # Keyhandler package
 PRODUCT_PACKAGES += \
